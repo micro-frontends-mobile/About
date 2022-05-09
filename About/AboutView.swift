@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AboutView: View {
+  @State var dynamicHeight: CGFloat = .zero
+
   var body: some View {
-    VStack {
+    ScrollView {
       Text("About Page")
         .font(.largeTitle)
 
@@ -19,7 +21,8 @@ struct AboutView: View {
 
       Divider()
 
-      AboutWebView()
+      AboutWebView(dynamicHeight: $dynamicHeight)
+        .frame(height: $dynamicHeight.wrappedValue)
     }
     .background(Color(uiColor: UIColor(red: 243/255, green: 243/255, blue: 222/255, alpha: 1)))
   }
