@@ -38,3 +38,9 @@ struct AboutWebView: UIViewRepresentable {
     }
   }
 }
+
+struct AboutWebView_Previews: PreviewProvider {
+  static var previews: some View {
+    AboutWebView()
+  }
+}
