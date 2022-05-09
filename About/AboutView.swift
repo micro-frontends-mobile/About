@@ -8,10 +8,8 @@
 import SwiftUI
 
 struct AboutView: View {
-  private let url = "https://demo.microfrontends.com/about"
-
   var body: some View {
-    AboutWebView(url: URL(string: url)!)
+    AboutWebView()
       .ignoresSafeArea()
   }
 }

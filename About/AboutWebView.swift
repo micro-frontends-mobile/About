@@ -9,8 +9,8 @@ import SwiftUI
 import WebKit
 
 struct AboutWebView: UIViewRepresentable {
-  let url: URL
-  var webView: WKWebView
+  let url = URL(string: "https://demo.microfrontends.com/about")!
+  var webView: WKWebView = WKWebView()
 
   func makeUIView(context: UIViewRepresentableContext<AboutWebView>) -> WKWebView {
     let request = URLRequest(url: self.url, cachePolicy: .returnCacheDataElseLoad)
@@ -24,24 +24,16 @@ struct AboutWebView: UIViewRepresentable {
     webView.load(request)
   }
 
-  init(url: URL) {
-    self.url = url
-    webView = WKWebView()
+  init() {
     webView.navigationDelegate = delegate
   }
 
   /// - WebViewDelegate
-  lazy var delegate = WebViewDelegate(webView)
+  lazy var delegate = WebViewDelegate()
 
   class WebViewDelegate: NSObject, WKNavigationDelegate {
-    var webView: WKWebView
-
-    init(_ webView: WKWebView) {
-      self.webView = webView
-    }
-
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-      // Remove header from webview
+      // Remove header from webView
       webView.evaluateJavaScript("document.getElementsByTagName('header')[0].style.display = 'none'")
     }
   }
