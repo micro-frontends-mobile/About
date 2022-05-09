@@ -34,7 +34,11 @@ struct AboutWebView: UIViewRepresentable {
   class WebViewDelegate: NSObject, WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
       // Remove header from webView
-      webView.evaluateJavaScript("document.getElementsByTagName('header')[0].style.display = 'none'")
+      webView.evaluateJavaScript(
+        """
+        document.getElementsByTagName('header')[0].style.display = 'none';
+        document.getElementById('about').style = 'font-family: -apple-system;'
+        """)
     }
   }
 }

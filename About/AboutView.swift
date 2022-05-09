@@ -9,8 +9,19 @@ import SwiftUI
 
 struct AboutView: View {
   var body: some View {
-    AboutWebView()
-      .ignoresSafeArea()
+    VStack {
+      Text("About Page")
+        .font(.largeTitle)
+
+      Text("The below content from Cam Jackson's website.")
+        .font(Font.system(size: 18))
+        .font(.body)
+
+      Divider()
+
+      AboutWebView()
+    }
+    .background(Color(uiColor: UIColor(red: 243/255, green: 243/255, blue: 222/255, alpha: 1)))
   }
 }
 
