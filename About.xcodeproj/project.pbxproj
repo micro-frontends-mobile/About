@@ -14,6 +14,8 @@
 		B58837CC2829079D0095CEE2 /* AboutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58837CB2829079D0095CEE2 /* AboutTests.swift */; };
 		B58837D62829079D0095CEE2 /* AboutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58837D52829079D0095CEE2 /* AboutUITests.swift */; };
 		B58837D82829079D0095CEE2 /* AboutUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58837D72829079D0095CEE2 /* AboutUITestsLaunchTests.swift */; };
+		B58837EB282943240095CEE2 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58837EA282943240095CEE2 /* AboutView.swift */; };
+		B58837ED282943850095CEE2 /* AboutWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58837EC282943850095CEE2 /* AboutWebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		B58837D12829079D0095CEE2 /* AboutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AboutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B58837D52829079D0095CEE2 /* AboutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUITests.swift; sourceTree = "<group>"; };
 		B58837D72829079D0095CEE2 /* AboutUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B58837EA282943240095CEE2 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		B58837EC282943850095CEE2 /* AboutWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 				B58837BC282907980095CEE2 /* ContentView.swift */,
 				B58837BE2829079C0095CEE2 /* Assets.xcassets */,
 				B58837C02829079C0095CEE2 /* Preview Content */,
+				B58837EA282943240095CEE2 /* AboutView.swift */,
+				B58837EC282943850095CEE2 /* AboutWebView.swift */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58837BD282907980095CEE2 /* ContentView.swift in Sources */,
+				B58837ED282943850095CEE2 /* AboutWebView.swift in Sources */,
+				B58837EB282943240095CEE2 /* AboutView.swift in Sources */,
 				B58837BB282907980095CEE2 /* AboutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
