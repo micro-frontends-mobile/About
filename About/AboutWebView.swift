@@ -68,6 +68,17 @@ struct AboutWebView: UIViewRepresentable {
           self.height.send(webView.scrollView.contentSize.height)
         }
     }
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
+      if navigationAction.navigationType == .linkActivated, let url = navigationAction.request.url, await UIApplication.shared.canOpenURL(url) {
+        DispatchQueue.main.async {
+          UIApplication.shared.open(url)
+        }
+        return .cancel
+      } else {
+        return .allow
+      }
+    }
   }
 }
 
