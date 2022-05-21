@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct AboutView: View {
+public struct AboutView: View {
   @State var dynamicHeight: CGFloat = .zero
 
-  var body: some View {
+  public init() {}
+
+  public var body: some View {
     ScrollView {
       Text("About Page")
         .font(.largeTitle)
