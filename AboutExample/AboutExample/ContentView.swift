@@ -1,15 +1,16 @@
 //
 //  ContentView.swift
-//  About
+//  AboutExample
 //
-//  Created by Dongdong Zhang on 2022/5/9.
+//  Created by Dongdong Zhang on 2022/5/21.
 //
 
 import SwiftUI
+import About
 
 struct ContentView: View {
     var body: some View {
-      AboutView()
+        AboutView()
     }
 }
 
