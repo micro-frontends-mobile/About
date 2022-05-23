@@ -7,11 +7,16 @@
 
 import SwiftUI
 import About
+import Env
 
 struct ContentView: View {
-    var body: some View {
-        AboutView()
-    }
+  init() {
+    _ = Env.initialize()
+  }
+  var body: some View {
+      AboutView()
+      .background(Env.shared.configuration.backgroundColor)
+  }
 }
 
 struct ContentView_Previews: PreviewProvider {

@@ -12,6 +12,7 @@
 		B579F3802838CA6B00B54D4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B579F37F2838CA6B00B54D4A /* Assets.xcassets */; };
 		B579F3832838CA6B00B54D4A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B579F3822838CA6B00B54D4A /* Preview Assets.xcassets */; };
 		B579F38D2838CA9900B54D4A /* About in Frameworks */ = {isa = PBXBuildFile; productRef = B579F38C2838CA9900B54D4A /* About */; };
+		B58F75E9283BE7AB00D934FA /* Env in Frameworks */ = {isa = PBXBuildFile; productRef = B58F75E8283BE7AB00D934FA /* Env */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58F75E9283BE7AB00D934FA /* Env in Frameworks */,
 				B579F38D2838CA9900B54D4A /* About in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -105,6 +107,7 @@
 			name = AboutExample;
 			packageProductDependencies = (
 				B579F38C2838CA9900B54D4A /* About */,
+				B58F75E8283BE7AB00D934FA /* Env */,
 			);
 			productName = AboutExample;
 			productReference = B579F3782838CA6900B54D4A /* AboutExample.app */;
@@ -134,6 +137,9 @@
 				Base,
 			);
 			mainGroup = B579F36F2838CA6900B54D4A;
+			packageReferences = (
+				B58F75E7283BE7AB00D934FA /* XCRemoteSwiftPackageReference "Env" */,
+			);
 			productRefGroup = B579F3792838CA6900B54D4A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -363,10 +369,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		B58F75E7283BE7AB00D934FA /* XCRemoteSwiftPackageReference "Env" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/micro-frontends-mobile/Env";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		B579F38C2838CA9900B54D4A /* About */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = About;
+		};
+		B58F75E8283BE7AB00D934FA /* Env */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B58F75E7283BE7AB00D934FA /* XCRemoteSwiftPackageReference "Env" */;
+			productName = Env;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
