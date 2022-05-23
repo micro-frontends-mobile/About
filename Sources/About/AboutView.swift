@@ -26,7 +26,6 @@ public struct AboutView: View {
       AboutWebView(dynamicHeight: $dynamicHeight)
         .frame(height: $dynamicHeight.wrappedValue)
     }
-    .background(Color(uiColor: UIColor(red: 243/255, green: 243/255, blue: 222/255, alpha: 1)))
   }
 }
 
