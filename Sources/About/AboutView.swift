@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import Env
 
 public struct AboutView: View {
   @State var dynamicHeight: CGFloat = .zero
 
-  public init() {}
+  public init() {
+    _ = Env.initialize()
+  }
 
   public var body: some View {
     ScrollView {
@@ -26,7 +29,7 @@ public struct AboutView: View {
       AboutWebView(dynamicHeight: $dynamicHeight)
         .frame(height: $dynamicHeight.wrappedValue)
     }
-    .background(Color(uiColor: UIColor(red: 243/255, green: 243/255, blue: 222/255, alpha: 1)))
+    .background(Env.shared.configuration.backgroundColor)
   }
 }
 
