@@ -60,13 +60,23 @@ struct AboutWebView: UIViewRepresentable {
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
       // Remove header from webView
-      webView.evaluateJavaScript(
-        """
-        document.getElementsByTagName('header')[0].style.display = 'none';
-        document.getElementById('about').style = 'font-family: -apple-system;'
-        """) { _, _ in
+      webView.evaluateJavaScript(jsString) { _, _ in
           self.height.send(webView.scrollView.contentSize.height)
         }
+    }
+
+    private var jsString: String {
+      // Notice: The below logic should be moved to web.
+      let cssString = """
+      @media (prefers-color-scheme: dark) { \
+        body {color: white; background-color: gray;} \
+        a:link {color: #0096e2;} a:visited {color: #9d57df;}}
+      """
+      return """
+        document.getElementsByTagName('header')[0].style.display = 'none';
+        document.getElementById('about').style = 'font-family: -apple-system;'
+        var style = document.createElement('style'); style.innerHTML = '\(cssString)'; document.head.appendChild(style);
+        """
     }
 
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction) async -> WKNavigationActionPolicy {
