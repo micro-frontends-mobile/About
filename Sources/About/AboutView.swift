@@ -20,9 +20,14 @@ public struct AboutView: View {
       Text("About Page")
         .font(.largeTitle)
 
-      Text("The below content from Cam Jackson's website.")
-        .font(Font.system(size: 18))
-        .font(.body)
+      HStack {
+        Text(.init(message))
+          .font(Font.system(size: 19))
+          .lineSpacing(6)
+
+        Spacer()
+      }
+      .padding()
 
       Divider()
 
@@ -34,6 +39,17 @@ public struct AboutView: View {
 
   private var url: URL {
     URL(string: "\(Env.shared.configuration.host)/about")!
+  }
+
+  private var message: String {
+    """
+    This App was created by [zddhub](https://github.com/zddhub) to \
+    demonstrate just one way that micro frontends can be implemented \
+    on mobile side. \
+    \n
+    The below content is from Cam Jackson's website. It's been embedded \
+    like mobile native.
+    """
   }
 }
 

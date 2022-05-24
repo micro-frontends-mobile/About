@@ -71,7 +71,7 @@ struct AboutWebView: UIViewRepresentable {
       let cssString = """
       @media (prefers-color-scheme: dark) { \
         body {color: white; background-color: gray;} \
-        a:link {color: #0096e2;} a:visited {color: #9d57df;}}
+        } a:link {color: #3c82f6;} a:visited {color: #3c82f6;}
       """
       return """
         document.getElementsByTagName('header')[0].style.display = 'none';
