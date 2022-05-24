@@ -38,7 +38,7 @@ public struct AboutView: View {
   }
 
   private var url: URL {
-    URL(string: "\(Env.shared.configuration.host)/about")!
+    URL(string: "\(Env.shared.configuration.demoHost)/about")!
   }
 
   private var message: String {
