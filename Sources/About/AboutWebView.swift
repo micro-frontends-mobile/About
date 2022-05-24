@@ -10,7 +10,7 @@ import WebKit
 import Combine
 
 struct AboutWebView: UIViewRepresentable {
-  let url = URL(string: "https://demo.microfrontends.com/about")!
+  let url: URL
   var webView: WKWebView = WKWebView()
   @Binding var dynamicHeight: CGFloat
 
@@ -26,7 +26,8 @@ struct AboutWebView: UIViewRepresentable {
     webView.load(request)
   }
 
-  init(dynamicHeight: Binding<CGFloat>) {
+  init(url: URL, dynamicHeight: Binding<CGFloat>) {
+    self.url = url
     self._dynamicHeight = dynamicHeight
     webView.navigationDelegate = delegate
     webView.scrollView.isScrollEnabled = false
@@ -95,7 +96,7 @@ struct AboutWebView: UIViewRepresentable {
 struct AboutWebView_Previews: PreviewProvider {
   static var dynamicHeight: CGFloat = 0.0
   static var previews: some View {
-    AboutWebView(dynamicHeight: Binding<CGFloat>.init(get: {
+    AboutWebView(url: URL(string: "https://demo.microfrontends.com/about")!, dynamicHeight: Binding<CGFloat>.init(get: {
       dynamicHeight
     }, set: { height in
       dynamicHeight = height

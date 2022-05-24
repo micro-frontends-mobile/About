@@ -26,10 +26,14 @@ public struct AboutView: View {
 
       Divider()
 
-      AboutWebView(dynamicHeight: $dynamicHeight)
+      AboutWebView(url: url, dynamicHeight: $dynamicHeight)
         .frame(height: $dynamicHeight.wrappedValue)
     }
     .background(Env.shared.configuration.backgroundColor)
+  }
+
+  private var url: URL {
+    URL(string: "\(Env.shared.configuration.host)/about")!
   }
 }
 
